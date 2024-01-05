@@ -1,0 +1,58 @@
+class Bank:
+    def __init__(self, bankname):
+        self.bankname=bankname 
+class Account:
+    def __init__(self,Number,accountholder,balance):
+        self.Number=Number
+        self.accountholder=accountholder
+        self.balance=balance
+        print('Account created succssfully!')
+class Deposit:
+    def __init__(self,amount,balance):
+        self.balance=balance
+        self.amount=amount
+        self.balance+=amount
+        print(amount,'Deposited to your account succssfully!')
+        print(balance+amount,'Is Your Current Balance')
+class withdrawl:
+    def __init__(self,amount,balance):
+         self.balance=balance+amount
+         if self.balance >= amount:
+            self.balance -= amount
+            print(amount,'Withdrawed succssfully!')
+            print(balance-amount,'Is Your Current Balance')
+         else:
+             print('Insufficient Balance!!')
+class Run:
+    bankname=input('Enter the Bank Name:')
+    while True:
+        print('Select Your Choice:')
+        print('1. Create Account')
+        print('2. Deposit')
+        print('3. Withdrawl') 
+        print('4. Exit')
+        
+        choice=int(input('Enter Your Choice:'))
+
+        if choice==1:
+            Number=int(input('Enter the Account Number:'))
+            accountholder=input('Enter the Account Holder Name:')
+            balance=int(input('Enter the Opening Balance:'))
+            Account(Number,accountholder,balance)
+
+        if choice==2:
+            Number=int(input('Enter the Account Numbet:'))
+            amount=int(input('Enter the Amount to be Deposited:'))
+            Deposit(amount,balance)
+        
+        if choice==3:
+            Number=int(input('Enter the Account Numbet:'))
+            amount=int(input('Enter the Amount to be Withdrawn:'))
+            withdrawl(amount,balance)
+        
+        if choice==4:
+            print('Thanks for Using our ',bankname,'Bank')
+
+    Run()
+
+            
